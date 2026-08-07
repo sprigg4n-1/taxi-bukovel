@@ -18,7 +18,7 @@ const AutoCard = ({ auto }: Props) => {
         loading="lazy"
         width={1920}
         height={1280}
-        className="w-full max-w-180 h-52 border-b-2 border-white"
+        className="w-full max-w-180 min-h-52 h-auto border-b-2 border-white"
       />
       <div className="p-5 bg-muted-foreground/90">
         <div className="flex justify-between items-center mb-2">
