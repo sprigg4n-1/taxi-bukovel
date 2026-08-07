@@ -34,7 +34,10 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang={locale}
+      className={`${inter.variable} h-full antialiased scroll-smooth`}
+    >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
           <MainHeader />

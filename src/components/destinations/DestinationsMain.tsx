@@ -22,7 +22,13 @@ const DestinationsMain = () => {
           </p>
         </div>
 
-        <div>
+        <div className="hidden sm:flex flex-wrap items-stretch justify-center gap-10">
+          {destinationRoutes.map((route) => (
+            <DestinationCard key={route.id} route={route} />
+          ))}
+        </div>
+
+        <div className="block sm:hidden">
           <Swiper spaceBetween={12} slidesPerView="auto">
             {destinationRoutes.map((route) => (
               <SwiperSlide key={route.id} style={{ width: 260 }}>

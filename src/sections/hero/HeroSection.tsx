@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative h-[calc(100vh-50px)] overflow-hidden"
+      className="relative h-[calc(100vh-50px)] lg:h-[calc(100vh-74px)] overflow-hidden"
     >
       <Image
         src={heroBg}

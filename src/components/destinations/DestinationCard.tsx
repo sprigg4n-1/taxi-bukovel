@@ -10,7 +10,7 @@ const DestinationCard = ({ route }: Props) => {
   const t = useTranslations();
 
   return (
-    <div className="bg-card text-card-foreground rounded-2xl border border-border flex flex-col gap-2">
+    <div className="bg-card text-card-foreground rounded-2xl border border-border flex flex-col gap-2 sm:max-w-60 lg:max-w-90 w-full">
       <h3 className="font-bold text-[16px] sm:text-[18px] lg:text-[20px] flex items-center gap-3 justify-center border-b border-border p-2 sm:p-3 lg:p-4">
         {t(`locations.${route.from}`)}
         <span className="text-muted-foreground">⇄</span>

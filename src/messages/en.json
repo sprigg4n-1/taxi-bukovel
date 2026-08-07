@@ -4,7 +4,15 @@
     "subtitle": "Book a taxi and transfer in Bukovel, Tatariv, Yaremche and nearby. Comfortable cars, fixed price, 24/7. Call us"
   },
   "button": {
-    "call": "Call"
+    "call": "Call",
+    "telegram": "Contact via Telegram"
+  },
+  "header": {
+    "nav": {
+      "destinations": "Routes",
+      "autos": "Cars",
+      "whyWe": "Why us"
+    }
   },
   "locations": {
     "tatariv": "Tatariv",

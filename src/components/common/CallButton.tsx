@@ -9,7 +9,7 @@ const CallButton = ({ tel }: Props) => {
 
   return (
     <a
-      className="w-full bg-accent/70 text-white text-center py-2 rounded-2xl text-[16px] uppercase font-bold"
+      className="w-full block sm:hidden bg-accent/70 text-white text-center py-2 rounded-2xl text-[16px] uppercase font-bold"
       href={`tel:${tel}`}
     >
       {t("call")}

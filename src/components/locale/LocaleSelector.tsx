@@ -39,7 +39,7 @@ const LocaleSelector = () => {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center gap-1 rounded-md border border-white px-3 py-1.5 text-sm font-medium text-white hover:bg-white/10"
+        className="flex items-center gap-1 cursor-pointer rounded-md border border-white px-3 py-1.5 text-sm font-medium text-white hover:bg-white/10"
       >
         {localeLabels[locale] ?? locale.toUpperCase()}
         <span className={`transition-transform ${isOpen ? "rotate-180" : ""}`}>
@@ -56,7 +56,7 @@ const LocaleSelector = () => {
                 <button
                   type="button"
                   onClick={() => handleSelect(item)}
-                  className="block w-full px-3 py-2 text-center text-sm hover:bg-black/5"
+                  className="block cursor-pointer w-full px-3 py-2 text-center text-sm hover:bg-black/5"
                 >
                   {localeLabels[item] ?? item.toUpperCase()}
                 </button>

@@ -56,3 +56,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
 }
+
+section[id] {
+  scroll-margin-top: var(--header-height, 80px);
+}
