@@ -3,7 +3,7 @@ import React from "react";
 
 const AutosSection = () => {
   return (
-    <section className="my-12.5">
+    <section id="autos" className="my-12.5">
       <AutosMain />
     </section>
   );

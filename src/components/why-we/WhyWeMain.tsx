@@ -1,12 +1,12 @@
 import { useTranslations } from "next-intl";
 
 import BaseContainer from "../common/BaseContainer";
-import AutoCard from "./AutoCard";
-import { autos } from "@/constants/autos";
 import MainTitle from "../common/MainTitle";
+import WhyWeItem from "./WhyWeItem";
+import { features } from "@/constants/features";
 
-const AutosMain = () => {
-  const t = useTranslations("autos");
+const WhyWeMain = () => {
+  const t = useTranslations("whyWe");
 
   return (
     <BaseContainer>
@@ -17,9 +17,10 @@ const AutosMain = () => {
             {t("subtitle")}
           </p>
         </div>
-        <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-          {autos.map((auto) => (
-            <AutoCard key={auto.id} auto={auto} />
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {features.map((feature) => (
+            <WhyWeItem key={feature.id} feature={feature} />
           ))}
         </div>
       </div>
@@ -27,4 +28,4 @@ const AutosMain = () => {
   );
 };
 
-export default AutosMain;
+export default WhyWeMain;

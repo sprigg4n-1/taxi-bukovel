@@ -37,5 +37,35 @@
         "description": "For groups and companies with luggage"
       }
     }
+  },
+  "whyWe": {
+    "title": "Why choose us",
+    "subtitle": "Local drivers, comfort and a fair price",
+    "features": {
+      "availability": {
+        "title": "24/7",
+        "desc": "We'll arrive any time"
+      },
+      "fixedPrice": {
+        "title": "Fixed price",
+        "desc": "No surprises"
+      },
+      "roadKnowledge": {
+        "title": "We know the roads",
+        "desc": "Confident on mountain serpentines"
+      },
+      "skiLuggage": {
+        "title": "Ski storage",
+        "desc": "Luggage at no extra cost"
+      },
+      "childSeats": {
+        "title": "Child seats",
+        "desc": "Safe for little ones"
+      },
+      "paymentOptions": {
+        "title": "Cash or card",
+        "desc": "Whatever works for you"
+      }
+    }
   }
 }
