@@ -5,7 +5,7 @@ import heroBg from "@/images/hero/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[calc(100vh-49px)] overflow-hidden">
+    <section className="relative h-[calc(100vh-50px)] overflow-hidden">
       <Image
         src={heroBg}
         alt="hero bg image"

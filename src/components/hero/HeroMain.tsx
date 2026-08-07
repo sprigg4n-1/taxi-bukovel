@@ -10,12 +10,10 @@ const HeroMain = () => {
     <BaseContainer>
       <div className="text-primary flex flex-col items-center text-center h-full py-10 justify-between">
         <div>
-          <h1 className="text-accent font-extrabold uppercase text-[20px] mb-6">
+          <h1 className="text-accent font-extrabold text-[22px] mb-4">
             {t("title")}
           </h1>
-          <p className="text-white font-medium text-[16px] leading-[125%]">
-            {t("subtitle")}
-          </p>
+          <p className="text-white font-medium text-[14px]">{t("subtitle")}</p>
         </div>
 
         <CallButton tel="+380969086707" />

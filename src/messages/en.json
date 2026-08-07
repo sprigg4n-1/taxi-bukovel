@@ -1,9 +1,25 @@
 {
   "hero": {
-    "title": "Taxi and Transfer in Bukovel - Tatariv, Ivano-Frankivsk Airport, Railway Stations",
-    "subtitle": "Comfortable cars, experienced drivers, upfront pricing. Available 24/7."
+    "title": "Taxi & Transfer Bukovel, Tatariv, Yaremche",
+    "subtitle": "Book a taxi and transfer in Bukovel, Tatariv, Yaremche and nearby. Comfortable cars, fixed price, 24/7. Call us"
   },
   "button": {
-    "call": "Order a transfer"
+    "call": "Call"
+  },
+  "locations": {
+    "tatariv": "Tatariv",
+    "bukovel": "Bukovel",
+    "yaremche": "Yaremche",
+    "mykulychyn": "Mykulychyn",
+    "polyanytsia": "Polyanytsia"
+  },
+  "destinations": {
+    "title": "Popular Routes",
+    "distanceLabel": "Distance",
+    "durationLabel": "Time",
+    "priceLabel": "Price",
+    "priceCurrency": "UAH",
+    "durationUnit": "min",
+    "distanceUnit": "km"
   }
 }
