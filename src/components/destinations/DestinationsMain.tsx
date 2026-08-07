@@ -14,11 +14,14 @@ const DestinationsMain = () => {
   return (
     <BaseContainer>
       <div className="flex flex-col">
-        <h2 className="text-primary font-extrabold text-[20px] text-center mb-6">
-          {t("title")}
-        </h2>
+        <div className="mb-6 flex text-center items-center flex-col justify-center">
+          <h2 className="text-primary font-extrabold text-[20px] text-center">
+            {t("title")}
+          </h2>
+          <p className="text-[14px] text-primary/80">{t("subtitle")}</p>
+        </div>
 
-        <div className="mb-8">
+        <div>
           <Swiper spaceBetween={12} slidesPerView="auto">
             {destinationRoutes.map((route) => (
               <SwiperSlide key={route.id} style={{ width: 260 }}>
@@ -27,8 +30,6 @@ const DestinationsMain = () => {
             ))}
           </Swiper>
         </div>
-
-        <CallButton tel="+380969086707" />
       </div>
     </BaseContainer>
   );

@@ -1,0 +1,12 @@
+import AutosMain from "@/components/autos/AutosMain";
+import React from "react";
+
+const AutosSection = () => {
+  return (
+    <section className="my-12.5">
+      <AutosMain />
+    </section>
+  );
+};
+
+export default AutosSection;

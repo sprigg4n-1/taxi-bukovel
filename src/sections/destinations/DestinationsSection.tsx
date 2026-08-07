@@ -3,7 +3,7 @@ import React from "react";
 
 const DestinationsSection = () => {
   return (
-    <section className="py-12.5">
+    <section className="my-12.5">
       <DestinationsMain />
     </section>
   );

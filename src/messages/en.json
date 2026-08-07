@@ -15,11 +15,27 @@
   },
   "destinations": {
     "title": "Popular Routes",
+    "subtitle": "Fast, comfortable, fair price",
     "distanceLabel": "Distance",
     "durationLabel": "Time",
     "priceLabel": "Price",
     "priceCurrency": "UAH",
     "durationUnit": "min",
     "distanceUnit": "km"
+  },
+  "autos": {
+    "title": "Our Fleet",
+    "subtitle": "Comfortable cars for trips and groups",
+    "seats": "up to {count} people",
+    "cars": {
+      "bmw320": {
+        "name": "BMW 320",
+        "description": "Comfortable ride for couples and small groups"
+      },
+      "renaultTrafic": {
+        "name": "Renault Trafic",
+        "description": "For groups and companies with luggage"
+      }
+    }
   }
 }

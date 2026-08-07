@@ -15,11 +15,27 @@
   },
   "destinations": {
     "title": "Популярні маршрути",
+    "subtitle": "Швидко, комфортно, за чесною ціною",
     "distanceLabel": "Відстань",
     "durationLabel": "Час",
     "priceLabel": "Ціна",
     "priceCurrency": "грн",
     "durationUnit": "хв",
     "distanceUnit": "км"
+  },
+  "autos": {
+    "title": "Наш автопарк",
+    "subtitle": "Комфортні авто для поїздок і груп",
+    "seats": "до {count} осіб",
+    "cars": {
+      "bmw320": {
+        "name": "BMW 320",
+        "description": "Комфортна поїздка, пари, невеликі компанії"
+      },
+      "renaultTrafic": {
+        "name": "Renault Trafic",
+        "description": "Для груп і компаній з багажем"
+      }
+    }
   }
 }
