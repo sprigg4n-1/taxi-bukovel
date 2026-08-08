@@ -42,7 +42,7 @@ const ContactsMain = () => {
             <div className="w-full h-72 sm:h-88 lg:h-110 relative rounded-xl overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/d/embed?mid=1ohRMI7AT6PGa3FQbpeD3lAt6CZ8Xpxg&ll=48.42,24.5&z=10"
-                className="w-full h-[calc(100%+60px)] absolute -top-15 border-0"
+                className="w-full h-[calc(100%+80px)] absolute -top-20 border-0"
                 loading="lazy"
               />
               <div className="absolute inset-0" />

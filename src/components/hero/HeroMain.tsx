@@ -12,10 +12,10 @@ const HeroMain = () => {
     <BaseContainer>
       <div className="text-primary flex flex-col items-center text-center h-full py-10 sm:py-14 md:py-16 lg:py-20 justify-between">
         <div>
-          <h1 className="text-white font-extrabold text-[22px] sm:text-[26px] md:text-[30px] lg:text-[34px] mb-4">
+          <h1 className="text-white font-extrabold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[34px] mb-4">
             {t("title")}
           </h1>
-          <p className="text-white/70 font-medium text-[14px] sm:max-w-210 text-center sm:text-[16px] md:text-[18px] lg:text-[20px]">
+          <p className="text-white/70 font-medium text-[16px] sm:max-w-210 text-center sm:text-[18px] md:text-[20px] lg:text-[22px]">
             {t("subtitle")}
           </p>
         </div>
