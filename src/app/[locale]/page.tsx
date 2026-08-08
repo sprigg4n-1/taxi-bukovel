@@ -1,4 +1,5 @@
 import AutosSection from "@/sections/autos/AutosSection";
+import ContactsSection from "@/sections/contacts/ContactsSection";
 import DestinationsSection from "@/sections/destinations/DestinationsSection";
 import HeroSection from "@/sections/hero/HeroSection";
 import WhyWeSection from "@/sections/why-we/WhyWeSection";
@@ -10,6 +11,7 @@ export default function Home() {
       <DestinationsSection />
       <AutosSection />
       <WhyWeSection />
+      <ContactsSection />
     </main>
   );
 }

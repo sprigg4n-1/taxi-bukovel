@@ -11,7 +11,8 @@
     "nav": {
       "destinations": "Routes",
       "autos": "Cars",
-      "whyWe": "Why us"
+      "whyWe": "Why us",
+      "contacts": "Contacts"
     }
   },
   "locations": {
@@ -75,5 +76,11 @@
         "desc": "Whatever works for you"
       }
     }
+  },
+  "contacts": {
+    "title": "Get in touch",
+    "subtitle": "Any time, day or night",
+    "serviceArea": "Service area",
+    "serviceAreaList": "Tatariv, Bukovel, Yaremche, Mykulychyn, Polyanytsya and others"
   }
 }

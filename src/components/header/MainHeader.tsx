@@ -21,7 +21,7 @@ const MainHeader = () => {
         setHeaderHeight(height);
         document.documentElement.style.setProperty(
           "--header-height",
-          `${height}px`
+          `${height}px`,
         );
       }
     };
@@ -75,6 +75,12 @@ const MainHeader = () => {
                   href={"#why-we"}
                 >
                   {t("whyWe")}
+                </Link>
+                <Link
+                  className="text-[14px] md:text-[16px] text-white/70 hover:text-white duration-300 ease-in-out"
+                  href={"#contacts"}
+                >
+                  {t("contacts")}
                 </Link>
               </nav>
               <LocaleSelector />
