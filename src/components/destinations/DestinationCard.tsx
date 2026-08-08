@@ -27,10 +27,10 @@ const DestinationCard = ({ route }: Props) => {
           {t("destinations.durationUnit")}
         </span>
 
-        <span className="text-accent font-bold text-[14px] sm:text-[16px] lg:text-[18px]">
+        {/* <span className="text-accent font-bold text-[14px] sm:text-[16px] lg:text-[18px]">
           {t("destinations.priceLabel")}: {route.price}{" "}
           {t("destinations.priceCurrency")}
-        </span>
+        </span> */}
       </div>
     </div>
   );
