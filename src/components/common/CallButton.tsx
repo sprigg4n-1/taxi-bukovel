@@ -1,16 +1,14 @@
 import { useTranslations } from "next-intl";
 
-interface Props {
-  tel: string;
-}
+import { PHONE_NUMBER } from "@/constants/links";
 
-const CallButton = ({ tel }: Props) => {
+const CallButton = () => {
   const t = useTranslations("button");
 
   return (
     <a
       className="w-full block sm:hidden bg-accent/70 text-white text-center py-2 rounded-2xl text-[16px] uppercase font-bold"
-      href={`tel:${tel}`}
+      href={`tel:${PHONE_NUMBER}`}
     >
       {t("call")}
     </a>

@@ -30,7 +30,7 @@ const HeroMain = () => {
           <LinkToTelegramButton />
         </div>
 
-        <CallButton tel="+380969086707" />
+        <CallButton />
       </div>
     </BaseContainer>
   );

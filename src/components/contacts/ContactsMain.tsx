@@ -26,7 +26,7 @@ const ContactsMain = () => {
                 +380 96 908 67 07
               </span>
             </p>
-            <CallButton tel="+380969086707" />
+            <CallButton />
             <LinkToTelegramButton />
           </div>
 
