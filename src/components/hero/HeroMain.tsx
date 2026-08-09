@@ -15,7 +15,7 @@ const HeroMain = () => {
           <h1 className="text-white font-extrabold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[34px] mb-4">
             {t("title")}
           </h1>
-          <p className="text-white/70 font-medium text-[16px] sm:max-w-210 text-center sm:text-[18px] md:text-[20px] lg:text-[22px]">
+          <p className="text-white/80 font-medium text-[16px] sm:max-w-210 text-center sm:text-[18px] md:text-[20px] lg:text-[22px]">
             {t("subtitle")}
           </p>
         </div>
