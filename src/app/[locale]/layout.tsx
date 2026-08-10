@@ -8,6 +8,7 @@ import MainHeader from "@/components/header/MainHeader";
 import MainFooter from "@/components/footer/MainFooter";
 
 import "../globals.css";
+import FixedContact from "@/components/common/FixedContact";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -38,10 +39,11 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${inter.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col relative">
         <NextIntlClientProvider>
           <MainHeader />
           {children}
+          <FixedContact />
           <MainFooter />
         </NextIntlClientProvider>
       </body>
