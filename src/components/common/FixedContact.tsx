@@ -33,23 +33,41 @@ const RotatingLabel = ({ text }: { text: string }) => {
 
 const FixedContact = () => {
   const t = useTranslations("button");
-  const [visible, setVisible] = useState(false);
+  const [pastHero, setPastHero] = useState(true);
+  const [overFooter, setOverFooter] = useState(false);
 
   useEffect(() => {
     const heroEl = document.getElementById("hero");
-    if (!heroEl) {
-      setVisible(true);
-      return;
+    const footerEl = document.getElementById("footer");
+
+    let cleanupHero: (() => void) | undefined;
+    let cleanupFooter: (() => void) | undefined;
+
+    if (heroEl) {
+      const heroObserver = new IntersectionObserver(
+        ([entry]) => setPastHero(!entry.isIntersecting),
+        { threshold: 0 },
+      );
+      heroObserver.observe(heroEl);
+      cleanupHero = () => heroObserver.disconnect();
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
-      { threshold: 0 },
-    );
+    if (footerEl) {
+      const footerObserver = new IntersectionObserver(
+        ([entry]) => setOverFooter(entry.isIntersecting),
+        { threshold: 0 },
+      );
+      footerObserver.observe(footerEl);
+      cleanupFooter = () => footerObserver.disconnect();
+    }
 
-    observer.observe(heroEl);
-    return () => observer.disconnect();
+    return () => {
+      cleanupHero?.();
+      cleanupFooter?.();
+    };
   }, []);
+
+  const visible = pastHero && !overFooter;
 
   const visibilityClass = visible
     ? "opacity-100 pointer-events-auto"

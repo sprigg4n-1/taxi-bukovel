@@ -84,5 +84,11 @@
     "subtitle": "Any time, day or night",
     "serviceArea": "Service area",
     "serviceAreaList": "Tatariv, Bukovel, Yaremche, Mykulychyn, Polyanytsya and others"
+  },
+  "footer": {
+    "description": "Taxi and transfer service across the Bukovel region. Comfortable cars, fair price, 24/7",
+    "workingHours": "Available 24/7, every day",
+    "serviceArea": "We drive to: Tatariv, Bukovel, Yaremche, Mykulychyn, Polyanytsia",
+    "copyright": "© {year} Taxi Bukovel"
   }
 }
