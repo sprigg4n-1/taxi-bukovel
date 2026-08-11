@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import HeroMain from "@/components/hero/HeroMain";
 
 import heroBg2 from "@/images/hero/hero-bg-2.jpg";
 import heroBgPc from "@/images/hero/hero-bg.jpg";
 
 const HeroSection = () => {
+  const t = useTranslations("hero");
+
   return (
     <section
       id="hero"
@@ -12,14 +15,14 @@ const HeroSection = () => {
     >
       <Image
         src={heroBg2}
-        alt="hero bg image"
+        alt={t("imageAlt")}
         fill
         priority
         className="-z-10 object-cover block md:hidden"
       />
       <Image
         src={heroBgPc}
-        alt="hero bg image"
+        alt={t("imageAlt")}
         fill
         priority
         className="-z-10 object-cover hidden md:block"
