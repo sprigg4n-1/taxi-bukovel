@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import { MessageCircleMoreIcon, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { PHONE_NUMBER, TELEGRAM_LINK } from "@/constants/links";
 import Link from "next/link";
 
@@ -31,6 +32,7 @@ const RotatingLabel = ({ text }: { text: string }) => {
 };
 
 const FixedContact = () => {
+  const t = useTranslations("button");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -59,7 +61,7 @@ const FixedContact = () => {
         href={`tel:${PHONE_NUMBER}`}
         className={`group fixed z-60 bottom-5 right-5 sm:hidden size-16 bg-accent rounded-full flex items-center justify-center transition-opacity duration-300 ${visibilityClass}`}
       >
-        <RotatingLabel text="ТЕЛЕФОНУЙТЕ - ТЕЛЕФОНУЙТЕ -" />
+        <RotatingLabel text={t("rotatingCall")} />
         <Phone className="relative z-10 size-6 text-white" />
       </Link>
       <Link
@@ -68,7 +70,7 @@ const FixedContact = () => {
         rel="noopener noreferrer"
         className={`group fixed z-60 hidden sm:flex bottom-8 right-8 lg:bottom-12 lg:right-12 xl:bottom-14 xl:right-14 size-16 lg:size-24 bg-blue-500 rounded-full items-center justify-center transition-opacity duration-300 ${visibilityClass}`}
       >
-        <RotatingLabel text="ЗВ'ЯЗАТИСЬ В ТЕЛЕГРАМ" />
+        <RotatingLabel text={t("rotatingTelegram")} />
         <MessageCircleMoreIcon className="relative z-10 size-6 lg:size-8 text-white" />
       </Link>
     </>

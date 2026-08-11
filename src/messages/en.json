@@ -5,7 +5,9 @@
   },
   "button": {
     "call": "Call",
-    "telegram": "Contact via Telegram"
+    "telegram": "Contact via Telegram",
+    "rotatingCall": "CALL US, WE ARE HERE FOR YOU",
+    "rotatingTelegram": "CONTACT VIA TELEGRAM"
   },
   "header": {
     "nav": {
