@@ -1,7 +1,7 @@
 import type { StaticImageData } from "next/image";
 
 import bmwImage from "@/images/autos/bmw.jpg";
-import renoImage from "@/images/autos/reno.webp";
+import renoImage from "@/images/autos/reno.jpg";
 
 export interface Auto {
   id: string;

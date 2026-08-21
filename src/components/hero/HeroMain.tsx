@@ -24,7 +24,7 @@ const HeroMain = () => {
           <p className="flex items-center gap-2 text-accent">
             <Phone className="size-8" />
             <span className="text-[16px] md:text-[18px] lg:text-[20px] font-bold">
-              +380 96 908 67 07
+              +380 96 887 11 34
             </span>
           </p>
           <LinkToTelegramButton />
