@@ -1,6 +1,6 @@
-// Placeholder until the real production domain is decided — swap via NEXT_PUBLIC_SITE_URL.
+// Vercel redirects the apex domain to www (308), so www is the canonical host — swap via NEXT_PUBLIC_SITE_URL.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://taxi-bukovel.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.taxi-bukovel.com";
 
 // Our routing locale is "ua" (matches the URL prefix), but hreflang requires
 // the ISO 639-1 language code — Ukrainian is "uk", not "ua" (that's the
