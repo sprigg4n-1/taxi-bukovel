@@ -17,6 +17,7 @@ import MainFooter from "@/components/footer/MainFooter";
 import "../globals.css";
 import FixedContact from "@/components/common/FixedContact";
 import heroBg2 from "@/images/hero/hero-bg-2.jpg";
+import ogImageSrc from "@/images/og.png";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -33,9 +34,9 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   const ogImage = {
-    url: heroBg2.src,
-    width: heroBg2.width,
-    height: heroBg2.height,
+    url: ogImageSrc.src,
+    width: ogImageSrc.width,
+    height: ogImageSrc.height,
     alt: t("title"),
   };
 
@@ -68,7 +69,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [heroBg2.src],
+      images: [ogImageSrc.src],
     },
   };
 }

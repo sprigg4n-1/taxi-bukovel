@@ -1,2 +1,2 @@
-export const PHONE_NUMBER = "+380969086707";
-export const TELEGRAM_LINK = "https://t.me/Bodich007";
+export const PHONE_NUMBER = "+380968871134";
+export const TELEGRAM_LINK = "https://t.me/+380968871134";
