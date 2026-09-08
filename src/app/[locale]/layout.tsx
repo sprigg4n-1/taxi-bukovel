@@ -8,8 +8,11 @@ import {
   LOCALE_TO_HREFLANG,
   LOCALE_TO_OG_LOCALE,
   SITE_URL,
+  GA_ID,
 } from "@/constants/seo";
 import { PHONE_NUMBER } from "@/constants/links";
+
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import MainHeader from "@/components/header/MainHeader";
 import MainFooter from "@/components/footer/MainFooter";
@@ -125,7 +128,9 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col relative">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
         />
         <NextIntlClientProvider>
           <MainHeader />
@@ -133,6 +138,7 @@ export default async function LocaleLayout({
           <FixedContact />
           <MainFooter />
         </NextIntlClientProvider>
+        <GoogleAnalytics gaId={GA_ID} />
       </body>
     </html>
   );
