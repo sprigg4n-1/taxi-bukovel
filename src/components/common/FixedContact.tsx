@@ -4,6 +4,7 @@ import { useEffect, useId, useState } from "react";
 import { MessageCircleMoreIcon, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { PHONE_NUMBER, TELEGRAM_LINK } from "@/constants/links";
+import { GA_EVENT, trackEvent } from "@/lib/gtag";
 import Link from "next/link";
 
 const CIRCLE_PATH = "M 50,50 m -33,0 a 33,33 0 1,1 66,0 a 33,33 0 1,1 -66,0";
@@ -78,6 +79,7 @@ const FixedContact = () => {
       <Link
         href={`tel:${PHONE_NUMBER}`}
         className={`group fixed z-60 bottom-5 right-5 sm:hidden size-16 bg-accent rounded-full flex items-center justify-center transition-opacity duration-300 ${visibilityClass}`}
+        onClick={() => trackEvent(GA_EVENT.call)}
       >
         <RotatingLabel text={t("rotatingCall")} />
         <Phone className="relative z-10 size-6 text-white" />
@@ -87,6 +89,7 @@ const FixedContact = () => {
         target="_blank"
         rel="noopener noreferrer"
         className={`group fixed z-60 hidden sm:flex bottom-8 right-8 lg:bottom-12 lg:right-12 xl:bottom-14 xl:right-14 size-16 lg:size-24 bg-blue-500 rounded-full items-center justify-center transition-opacity duration-300 ${visibilityClass}`}
+        onClick={() => trackEvent(GA_EVENT.telegram)}
       >
         <RotatingLabel text={t("rotatingTelegram")} />
         <MessageCircleMoreIcon className="relative z-10 size-6 lg:size-8 text-white" />
