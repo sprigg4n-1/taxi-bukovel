@@ -10,6 +10,7 @@ const STICKY_THRESHOLD = 200;
 
 const MainHeader = () => {
   const t = useTranslations("header.nav");
+  const tBrand = useTranslations("brand");
   const headerRef = useRef<HTMLElement>(null);
   const [isSticky, setIsSticky] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -52,9 +53,14 @@ const MainHeader = () => {
       >
         <BaseContainer>
           <div className="flex items-center justify-between">
-            <span className="font-bold text-[16px] lg:text-[22px] uppercase text-white">
-              Taxi Bukovel
-            </span>
+            <div className="flex flex-col">
+              <span className="font-bold text-[16px] lg:text-[22px] uppercase text-white">
+                Taxi Bukovel
+              </span>
+              <span className="text-[10px] lg:text-[12px] text-white/60">
+                {tBrand("tagline")}
+              </span>
+            </div>
 
             <div className="flex gap-10 lg:gap-20 items-center">
               <nav className="hidden sm:flex gap-5 lg:gap-10">

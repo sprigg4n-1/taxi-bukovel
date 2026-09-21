@@ -56,6 +56,22 @@ export async function generateMetadata({
         "x-default": `/${routing.defaultLocale}`,
       },
     },
+    keywords:
+      locale === "ua"
+        ? [
+            "таксі Татарів",
+            "таксі Буковель",
+            "трансфер Татарів Буковель",
+            "таксі Яремче",
+            "трансфер Буковель",
+            "таксі Поляниця",
+          ]
+        : [
+            "taxi Tatariv",
+            "taxi Bukovel",
+            "Tatariv Bukovel transfer",
+            "taxi Yaremche",
+          ],
     openGraph: {
       title: t("title"),
       description: t("description"),
@@ -95,13 +111,26 @@ export default async function LocaleLayout({
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#business`,
     additionalType: "https://schema.org/TaxiService",
     name: "Taxi Bukovel",
+    alternateName: locale === "ua" ? "Таксі Татарів" : "Taxi Tatariv",
     image: `${SITE_URL}${heroBg2.src}`,
     telephone: PHONE_NUMBER,
     url: `${SITE_URL}/${locale}`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: tLocations("tatariv"),
+      addressRegion: "Івано-Франківська область",
+      addressCountry: "UA",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 48.3306,
+      longitude: 24.4694,
+    },
     areaServed: (
-      ["bukovel", "tatariv", "yaremche", "mykulychyn", "polyanytsia"] as const
+      ["tatariv", "bukovel", "polyanytsia", "yaremche", "mykulychyn"] as const
     ).map((id) => ({ "@type": "Place", name: tLocations(id) })),
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",

@@ -18,6 +18,9 @@ const MainFooter = () => {
               <span className="font-bold text-[16px] lg:text-[22px] uppercase text-white">
                 Taxi Bukovel
               </span>
+              <span className="text-[10px] sm:text-[12px] text-white/60">
+                {t("brand.tagline")}
+              </span>
               <p className="text-[12px] sm:text-[14px] lg:text-[16px] text-white/80">
                 {t("footer.description")}
               </p>

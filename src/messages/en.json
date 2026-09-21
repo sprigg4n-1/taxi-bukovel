@@ -1,12 +1,15 @@
 {
   "metadata": {
-    "title": "Taxi Bukovel, Tatariv, Yaremche | 24/7 Transfer",
-    "description": "Book a taxi and transfer in Bukovel, Tatariv, Yaremche, Mykulychyn and Polyanytsia. Comfortable cars, fixed price, available 24/7."
+    "title": "Taxi Tatariv — Bukovel, Yaremche | 24/7 Transfer",
+    "description": "Taxi and transfer in Tatariv, available 24/7. We drive Tatariv — Bukovel, Yaremche, Mykulychyn, Polyanytsia. Local drivers, fixed price, ski storage."
   },
   "hero": {
-    "title": "Taxi & Transfer Bukovel, Tatariv, Yaremche",
-    "subtitle": "Book a taxi and transfer in Bukovel, Tatariv, Yaremche and nearby. Comfortable cars, fixed price, 24/7. Call us",
-    "imageAlt": "Mountain view of Bukovel — taxi and transfer service across the region"
+    "title": "Taxi Tatariv — transfers to Bukovel and Yaremche",
+    "subtitle": "We're based in Tatariv — we drive to Bukovel, Yaremche, Mykulychyn and Polyanytsia. Comfortable cars, fixed price, 24/7. Call us!",
+    "imageAlt": "Mountains near Tatariv — taxi and transfer Tatariv–Bukovel"
+  },
+  "brand": {
+    "tagline": "Tatariv · Bukovel · Yaremche"
   },
   "button": {
     "call": "Call",
@@ -30,8 +33,8 @@
     "polyanytsia": "Polyanytsia"
   },
   "destinations": {
-    "title": "Popular Routes",
-    "subtitle": "Fast, comfortable, fair price",
+    "title": "Routes from Tatariv",
+    "subtitle": "Tatariv — Bukovel, Yaremche, Mykulychyn. Fast and at a fair price",
     "distanceLabel": "Distance",
     "durationLabel": "Time",
     "priceLabel": "Price",
@@ -56,7 +59,7 @@
   },
   "whyWe": {
     "title": "Why choose us",
-    "subtitle": "Local drivers, comfort and a fair price",
+    "subtitle": "Local drivers from Tatariv, comfort and a fair price",
     "features": {
       "availability": {
         "title": "24/7",
@@ -86,15 +89,15 @@
   },
   "contacts": {
     "title": "Get in touch",
-    "subtitle": "Any time, day or night",
+    "subtitle": "Taxi in Tatariv — available 24/7, every day",
     "serviceArea": "Service area",
-    "serviceAreaList": "Tatariv, Bukovel, Yaremche, Mykulychyn, Polyanytsya and others",
-    "mapTitle": "Taxi Bukovel service area map"
+    "serviceAreaList": "Tatariv, Bukovel, Polyanytsia, Yaremche, Mykulychyn and nearby",
+    "mapTitle": "Taxi Tatariv — Bukovel service area map"
   },
   "footer": {
-    "description": "Taxi and transfer service across the Bukovel region. Comfortable cars, fair price, 24/7",
+    "description": "Taxi and transfer from Tatariv across the whole Bukovel region. Comfortable cars, fair price, 24/7",
     "workingHours": "Available 24/7, every day",
-    "serviceArea": "We drive to: Tatariv, Bukovel, Yaremche, Mykulychyn, Polyanytsia",
+    "serviceArea": "We drive to: Tatariv, Bukovel, Polyanytsia, Yaremche, Mykulychyn",
     "copyright": "© {year} Taxi Bukovel"
   }
 }
