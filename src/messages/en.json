@@ -1,7 +1,8 @@
 {
   "metadata": {
     "title": "Taxi Tatariv — Bukovel, Yaremche | 24/7 Transfer",
-    "description": "Taxi and transfer in Tatariv, available 24/7. We drive Tatariv — Bukovel, Yaremche, Mykulychyn, Polyanytsia. Local drivers, fixed price, ski storage."
+    "description": "Taxi and transfer in Tatariv, available 24/7. We drive Tatariv — Bukovel, Yaremche, Mykulychyn, Polyanytsia. Local drivers, fixed price, ski storage.",
+    "region": "Ivano-Frankivsk Oblast"
   },
   "hero": {
     "title": "Taxi Tatariv — transfers to Bukovel and Yaremche",
@@ -22,7 +23,8 @@
       "destinations": "Routes",
       "autos": "Cars",
       "whyWe": "Why us",
-      "contacts": "Contacts"
+      "contacts": "Contacts",
+      "faq": "FAQ"
     }
   },
   "locations": {
@@ -40,7 +42,8 @@
     "priceLabel": "Price",
     "priceCurrency": "UAH",
     "durationUnit": "min",
-    "distanceUnit": "km"
+    "distanceUnit": "km",
+    "routeName": "Taxi {from} — {to}"
   },
   "autos": {
     "title": "Our Fleet",
@@ -55,7 +58,8 @@
         "name": "Renault Trafic",
         "description": "For groups and companies with luggage"
       }
-    }
+    },
+    "imageAlt": "Taxi Tatariv — {name}"
   },
   "whyWe": {
     "title": "Why choose us",
@@ -87,6 +91,40 @@
       }
     }
   },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "The essentials about taxi and transfer Tatariv — Bukovel",
+    "items": {
+      "price": {
+        "q": "How much is a taxi from Tatariv to Bukovel?",
+        "a": "The price is fixed and depends on the route and the car. We'll tell you the exact amount by phone or Telegram before the trip — no extra charges on the way."
+      },
+      "order": {
+        "q": "How do I book a taxi in Tatariv?",
+        "a": "Call +380 96 887 11 34 or message us on Telegram. Tell us where from, where to and what time — we'll confirm the time and the price."
+      },
+      "night": {
+        "q": "Do you work at night and on weekends?",
+        "a": "Yes, our taxi in Tatariv runs 24/7, every day. Early-morning and night rides are best booked in advance."
+      },
+      "group": {
+        "q": "Can I book a transfer for a group?",
+        "a": "Yes. The Renault Trafic seats up to 8 passengers with luggage, the BMW 320 up to 4."
+      },
+      "childSeat": {
+        "q": "Do you have a child seat?",
+        "a": "Yes, child seats are available. Please mention it when booking."
+      },
+      "luggage": {
+        "q": "Can you take skis and snowboards?",
+        "a": "Yes, there is room for skis, snowboards and suitcases. Luggage is free of charge."
+      },
+      "payment": {
+        "q": "How can I pay?",
+        "a": "Cash or card — whatever works for you."
+      }
+    }
+  },
   "contacts": {
     "title": "Get in touch",
     "subtitle": "Taxi in Tatariv — available 24/7, every day",
@@ -99,5 +137,10 @@
     "workingHours": "Available 24/7, every day",
     "serviceArea": "We drive to: Tatariv, Bukovel, Polyanytsia, Yaremche, Mykulychyn",
     "copyright": "© {year} Taxi Bukovel"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page doesn't exist or has been moved.",
+    "home": "Back to home"
   }
 }

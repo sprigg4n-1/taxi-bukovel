@@ -3,6 +3,7 @@ import BaseContainer from "../common/BaseContainer";
 import MainTitle from "../common/MainTitle";
 import { useTranslations } from "next-intl";
 import CallButton from "../common/CallButton";
+import PhoneLink from "../common/PhoneLink";
 import LinkToTelegramButton from "../common/LinkToTelegramButton";
 import { Phone } from "lucide-react";
 
@@ -20,11 +21,9 @@ const ContactsMain = () => {
 
         <div className="flex flex-col items-center sm:flex-row gap-5">
           <div className="flex-1 flex flex-col items-center gap-3 sm:gap-5">
-            <p className="flex items-center gap-2 text-primaryl">
+            <p className="flex items-center gap-2 text-primary">
               <Phone className="size-8" />
-              <span className="text-[16px] md:text-[18px] lg:text-[20px] font-bold">
-                +380 96 887 11 34
-              </span>
+              <PhoneLink className="text-[16px] md:text-[18px] lg:text-[20px] font-bold" />
             </p>
             <CallButton />
             <LinkToTelegramButton />

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
 const localeLabels: Record<string, string> = {
@@ -15,7 +15,6 @@ const LocaleSelector = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -28,11 +27,6 @@ const LocaleSelector = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  const handleSelect = (nextLocale: string) => {
-    setIsOpen(false);
-    router.replace(pathname, { locale: nextLocale });
-  };
 
   return (
     <div className="relative" ref={containerRef}>
@@ -47,23 +41,28 @@ const LocaleSelector = () => {
         </span>
       </button>
 
-      {isOpen && (
-        <ul className="absolute right-0 top-7 z-50 mt-2 w-full overflow-hidden rounded-md border border-border bg-card text-card-foreground shadow-lg">
-          {routing.locales
-            .filter((item) => item !== locale)
-            .map((item) => (
-              <li key={item}>
-                <button
-                  type="button"
-                  onClick={() => handleSelect(item)}
-                  className="block cursor-pointer w-full px-3 py-2 text-center text-sm hover:bg-black/5"
-                >
-                  {localeLabels[item] ?? item.toUpperCase()}
-                </button>
-              </li>
-            ))}
-        </ul>
-      )}
+      {/* Always rendered so crawlers can follow the links to other locales. */}
+      <ul
+        className={`absolute right-0 top-7 z-50 mt-2 w-full overflow-hidden rounded-md border border-border bg-card text-card-foreground shadow-lg ${
+          isOpen ? "" : "hidden"
+        }`}
+      >
+        {routing.locales
+          .filter((item) => item !== locale)
+          .map((item) => (
+            <li key={item}>
+              <Link
+                href={pathname}
+                locale={item}
+                replace
+                onClick={() => setIsOpen(false)}
+                className="block cursor-pointer w-full px-3 py-2 text-center text-sm hover:bg-black/5"
+              >
+                {localeLabels[item] ?? item.toUpperCase()}
+              </Link>
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };

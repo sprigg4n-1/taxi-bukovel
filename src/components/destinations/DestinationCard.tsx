@@ -19,11 +19,11 @@ const DestinationCard = ({ route }: Props) => {
 
       <div className="flex flex-col items-center justify-center gap-2 p-2 sm:p-3 lg:p-4 text-[12px] sm:text-[14px] lg:text-[16px] text-muted-foreground">
         <span>
-          {t("destinations.distanceLabel")}: {route.distanceKm}{" "}
+          {t("destinations.distanceLabel")}: ~{route.distanceKm}{" "}
           {t("destinations.distanceUnit")}
         </span>
         <span>
-          {t("destinations.durationLabel")}: {route.durationMinutes}{" "}
+          {t("destinations.durationLabel")}: ~{route.durationMinutes}{" "}
           {t("destinations.durationUnit")}
         </span>
 

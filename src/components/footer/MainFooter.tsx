@@ -1,10 +1,12 @@
 "use client";
 import Link from "next/link";
+import { Link as IntlLink } from "@/i18n/navigation";
 import BaseContainer from "../common/BaseContainer";
 import { useTranslations } from "next-intl";
 import { Clock, Phone } from "lucide-react";
 import LinkToTelegramButton from "../common/LinkToTelegramButton";
 import CallButton from "../common/CallButton";
+import PhoneLink from "../common/PhoneLink";
 
 const MainFooter = () => {
   const t = useTranslations("");
@@ -15,9 +17,12 @@ const MainFooter = () => {
         <div className="flex flex-col">
           <div className="flex flex-col items-center md:flex-row md:items-start gap-5 md:justify-between py-3 sm:py-5 lg:py-7">
             <div className="flex flex-col text-center gap-1 md:text-left md:gap-2 md:max-w-1/3 md:w-full">
-              <span className="font-bold text-[16px] lg:text-[22px] uppercase text-white">
+              <IntlLink
+                href="/"
+                className="font-bold text-[16px] lg:text-[22px] uppercase text-white"
+              >
                 Taxi Bukovel
-              </span>
+              </IntlLink>
               <span className="text-[10px] sm:text-[12px] text-white/60">
                 {t("brand.tagline")}
               </span>
@@ -44,6 +49,12 @@ const MainFooter = () => {
               >
                 {t("header.nav.whyWe")}
               </Link>
+              {/* <Link
+                className="text-[14px] md:text-[16px] text-white hover:text-white duration-300 ease-in-out"
+                href={"#faq"}
+              >
+                {t("header.nav.faq")}
+              </Link> */}
               <Link
                 className="text-[14px] md:text-[16px] text-white hover:text-white duration-300 ease-in-out"
                 href={"#contacts"}
@@ -54,9 +65,7 @@ const MainFooter = () => {
             <div className="flex flex-col gap-4 md:gap-6 items-center">
               <p className="hidden md:flex items-center gap-2 text-accent">
                 <Phone className="size-6" />
-                <span className="text-[16px] md:text-[18px] lg:text-[20px] font-bold">
-                  +380 96 887 11 34
-                </span>
+                <PhoneLink className="text-[16px] md:text-[18px] lg:text-[20px] font-bold" />
               </p>
               <CallButton />
               <LinkToTelegramButton />

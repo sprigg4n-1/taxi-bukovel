@@ -4,6 +4,11 @@ export const SITE_URL =
 
 export const GA_ID = "G-TMJW9LJ8CC";
 
+// Google Search Console HTML-tag verification code; the meta tag is rendered only when set.
+export const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
+
+export const THEME_COLOR = "#0f2a3f";
+
 // Our routing locale is "ua" (matches the URL prefix), but hreflang requires
 // the ISO 639-1 language code — Ukrainian is "uk", not "ua" (that's the
 // ISO 3166-1 country code and is not a valid hreflang value).

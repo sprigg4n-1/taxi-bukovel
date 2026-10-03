@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import BaseContainer from "../common/BaseContainer";
 import LocaleSelector from "../locale/LocaleSelector";
 import Link from "next/link";
+import { Link as IntlLink } from "@/i18n/navigation";
 
 const STICKY_THRESHOLD = 200;
 
@@ -54,9 +55,12 @@ const MainHeader = () => {
         <BaseContainer>
           <div className="flex items-center justify-between">
             <div className="flex flex-col">
-              <span className="font-bold text-[16px] lg:text-[22px] uppercase text-white">
+              <IntlLink
+                href="/"
+                className="font-bold text-[16px] lg:text-[22px] uppercase text-white"
+              >
                 Taxi Bukovel
-              </span>
+              </IntlLink>
               <span className="text-[10px] lg:text-[12px] text-white/60">
                 {tBrand("tagline")}
               </span>
@@ -82,6 +86,12 @@ const MainHeader = () => {
                 >
                   {t("whyWe")}
                 </Link>
+                {/* <Link
+                  className="text-[14px] md:text-[16px] text-white/70 hover:text-white duration-300 ease-in-out"
+                  href={"#faq"}
+                >
+                  {t("faq")}
+                </Link> */}
                 <Link
                   className="text-[14px] md:text-[16px] text-white/70 hover:text-white duration-300 ease-in-out"
                   href={"#contacts"}

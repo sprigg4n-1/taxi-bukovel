@@ -1,16 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import {
   LOCALE_TO_HREFLANG,
-  LOCALE_TO_OG_LOCALE,
   SITE_URL,
   GA_ID,
+  GSC_VERIFICATION,
+  THEME_COLOR,
 } from "@/constants/seo";
+import { buildPageMetadata } from "@/lib/metadata";
 import { PHONE_NUMBER } from "@/constants/links";
+import { destinationRoutes } from "@/constants/destinations";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -19,7 +22,6 @@ import MainFooter from "@/components/footer/MainFooter";
 
 import "../globals.css";
 import FixedContact from "@/components/common/FixedContact";
-import heroBg2 from "@/images/hero/hero-bg-2.jpg";
 import ogImageSrc from "@/images/og.png";
 
 const inter = Inter({
@@ -27,6 +29,14 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-inter",
 });
+
+export const viewport: Viewport = {
+  themeColor: THEME_COLOR,
+};
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -36,60 +46,14 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
 
-  const ogImage = {
-    url: ogImageSrc.src,
-    width: ogImageSrc.width,
-    height: ogImageSrc.height,
-    alt: t("title"),
-  };
-
   return {
-    metadataBase: new URL(SITE_URL),
-    title: t("title"),
-    description: t("description"),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        ...Object.fromEntries(
-          routing.locales.map((l) => [LOCALE_TO_HREFLANG[l] ?? l, `/${l}`]),
-        ),
-        "x-default": `/${routing.defaultLocale}`,
-      },
-    },
-    keywords:
-      locale === "ua"
-        ? [
-            "таксі Татарів",
-            "таксі Буковель",
-            "трансфер Татарів Буковель",
-            "таксі Яремче",
-            "трансфер Буковель",
-            "таксі Поляниця",
-          ]
-        : [
-            "taxi Tatariv",
-            "taxi Bukovel",
-            "Tatariv Bukovel transfer",
-            "taxi Yaremche",
-          ],
-    openGraph: {
+    ...buildPageMetadata({
+      locale,
       title: t("title"),
       description: t("description"),
-      url: `/${locale}`,
-      siteName: "Taxi Bukovel",
-      type: "website",
-      locale: LOCALE_TO_OG_LOCALE[locale] ?? locale,
-      alternateLocale: routing.locales
-        .filter((l) => l !== locale)
-        .map((l) => LOCALE_TO_OG_LOCALE[l] ?? l),
-      images: [ogImage],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: [ogImageSrc.src],
-    },
+      getPath: () => "",
+    }),
+    ...(GSC_VERIFICATION && { verification: { google: GSC_VERIFICATION } }),
   };
 }
 
@@ -106,6 +70,9 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  setRequestLocale(locale);
+
+  const t = await getTranslations({ locale });
   const tLocations = await getTranslations({ locale, namespace: "locations" });
 
   const localBusinessJsonLd = {
@@ -115,19 +82,19 @@ export default async function LocaleLayout({
     additionalType: "https://schema.org/TaxiService",
     name: "Taxi Bukovel",
     alternateName: locale === "ua" ? "Таксі Татарів" : "Taxi Tatariv",
-    image: `${SITE_URL}${heroBg2.src}`,
+    image: `${SITE_URL}${ogImageSrc.src}`,
     telephone: PHONE_NUMBER,
     url: `${SITE_URL}/${locale}`,
     address: {
       "@type": "PostalAddress",
       addressLocality: tLocations("tatariv"),
-      addressRegion: "Івано-Франківська область",
+      addressRegion: t("metadata.region"),
       addressCountry: "UA",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 48.3306,
-      longitude: 24.4694,
+      latitude: 48.3433,
+      longitude: 24.5791,
     },
     areaServed: (
       ["tatariv", "bukovel", "polyanytsia", "yaremche", "mykulychyn"] as const
@@ -147,6 +114,30 @@ export default async function LocaleLayout({
       closes: "23:59",
     },
     priceRange: "$$",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: t("destinations.title"),
+      itemListElement: destinationRoutes.map((route) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TaxiService",
+          name: t("destinations.routeName", {
+            from: tLocations(route.from),
+            to: tLocations(route.to),
+          }),
+        },
+      })),
+    },
+  };
+
+  const webSiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: `${SITE_URL}/${locale}`,
+    name: "Taxi Bukovel",
+    inLanguage: LOCALE_TO_HREFLANG[locale] ?? locale,
+    publisher: { "@id": `${SITE_URL}/#business` },
   };
 
   return (
@@ -158,7 +149,7 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessJsonLd),
+            __html: JSON.stringify([localBusinessJsonLd, webSiteJsonLd]),
           }}
         />
         <NextIntlClientProvider>

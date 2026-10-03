@@ -1,12 +1,8 @@
-"use client";
-import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useTranslations } from "next-intl";
 
 import BaseContainer from "../common/BaseContainer";
 import DestinationCard from "./DestinationCard";
 import { destinationRoutes } from "@/constants/destinations";
-import CallButton from "../common/CallButton";
 import MainTitle from "../common/MainTitle";
 
 const DestinationsMain = () => {
@@ -22,21 +18,16 @@ const DestinationsMain = () => {
           </p>
         </div>
 
-        <div className="hidden sm:flex flex-wrap items-stretch justify-center gap-10">
+        <ul className="flex items-stretch gap-3 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:gap-10 sm:overflow-visible">
           {destinationRoutes.map((route) => (
-            <DestinationCard key={route.id} route={route} />
+            <li
+              key={route.id}
+              className="flex shrink-0 snap-start w-65 sm:w-60 lg:w-90"
+            >
+              <DestinationCard route={route} />
+            </li>
           ))}
-        </div>
-
-        <div className="block sm:hidden">
-          <Swiper spaceBetween={12} slidesPerView="auto">
-            {destinationRoutes.map((route) => (
-              <SwiperSlide key={route.id} style={{ width: 260 }}>
-                <DestinationCard route={route} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        </ul>
       </div>
     </BaseContainer>
   );

@@ -3,6 +3,7 @@ import { Phone } from "lucide-react";
 
 import BaseContainer from "../common/BaseContainer";
 import CallButton from "../common/CallButton";
+import PhoneLink from "../common/PhoneLink";
 import LinkToTelegramButton from "../common/LinkToTelegramButton";
 
 const HeroMain = () => {
@@ -23,9 +24,7 @@ const HeroMain = () => {
         <div className="hidden sm:flex flex-col items-center sm:gap-8 lg:gap-10 text-white">
           <p className="flex items-center gap-2 text-accent">
             <Phone className="size-8" />
-            <span className="text-[16px] md:text-[18px] lg:text-[20px] font-bold">
-              +380 96 887 11 34
-            </span>
+            <PhoneLink className="text-[16px] md:text-[18px] lg:text-[20px] font-bold" />
           </p>
           <LinkToTelegramButton />
         </div>

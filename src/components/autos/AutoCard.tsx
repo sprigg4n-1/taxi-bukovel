@@ -14,7 +14,7 @@ const AutoCard = ({ auto }: Props) => {
     <div className="rounded-3xl overflow-hidden shadow-md bg-muted-foreground/90">
       <Image
         src={auto.img}
-        alt={t(`cars.${auto.id}.name`)}
+        alt={t("imageAlt", { name: t(`cars.${auto.id}.name`) })}
         loading="lazy"
         width={1920}
         height={1280}
