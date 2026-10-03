@@ -11,7 +11,7 @@ const HeroMain = () => {
 
   return (
     <BaseContainer>
-      <div className="text-primary flex flex-col items-center text-center h-full py-10 sm:py-14 md:py-16 lg:py-20 justify-between">
+      <div className="text-primary flex flex-col items-center text-center h-full py-10 sm:py-14 md:py-16 lg:py-20 justify-none gap-40 sm:gap-none sm:justify-between">
         <div>
           <h1 className="text-white font-extrabold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[34px] mb-4">
             {t("title")}
